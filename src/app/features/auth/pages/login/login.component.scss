@@ -1,0 +1,89 @@
+.login-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f2f5;
+  background-image: radial-gradient(#d0d0d0 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+mat-card {
+  width: 90%;
+  max-width: 400px;
+  padding: 30px;
+  border-radius: 3%;
+  background-color: #ffffff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+mat-card-header{
+    color: #2f49b2;
+}
+mat-form-field {
+  width: 100%;
+  color:  #2f49b2 !important;
+}
+
+::ng-deep{
+
+    // Personaliza el color del label y el input
+    .mat-form-field-label {
+        color: #2f49b2 !important;
+    }
+    .mat-form-field-underline {
+        background-color: #FF6B00 !important;
+    }
+
+    // Personaliza el color del texto del input
+    .mat-input-element {
+        color: hsl(0, 0%, 0%) !important;
+    }
+    // Personaliza el color del borde del input
+    .mat-form-field:hover{
+        .mat-form-field-label {
+            color: #FF6B00;
+        }
+        .mat-form-field-underline {
+            background-color:  #FF6B00;
+        }
+    } 
+    // Personaliza el color del label y el borde del input cuando el campo está enfocado
+    .mat-form-field.mat-focused {
+        .mat-form-field-label {
+            color: #FF6B00 !important;
+        }
+        .mat-form-field-ripple {
+            background-color: #2f49b2 !important;
+        }
+    }
+
+}
+
+mat-card-header{
+    font-size: x-large;
+    text-align: center;
+    display: block;
+    margin-bottom: 15%;
+}
+mat-card-actions button{
+    background-color: #2f49b2;
+    color: rgb(255, 255, 255);
+    margin-top: 5%;
+}
+mat-card-actions button:hover{
+    background-color: #FF6B00;
+    color:aquamarine;
+}
+mat-card-actions button:disabled {
+  opacity: 0.5;
+  background-color: #2f49b2;
+  color: #ffffff;
+}
