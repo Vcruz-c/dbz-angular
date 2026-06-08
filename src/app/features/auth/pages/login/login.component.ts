@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,8 @@ export class LoginComponent implements OnInit {
   protected formGroup!: FormGroup;
   
   constructor(
-    protected formBuilder: FormBuilder
+    protected formBuilder: FormBuilder,
+    protected router: Router
   ) {}
 
   ngOnInit(): void {
@@ -27,6 +29,12 @@ export class LoginComponent implements OnInit {
     //Puedo separarlos haciendo: this.formGroup.value.email o this.formGroup.value.password
     console.log(this.formGroup.value.email);
     console.log(this.formGroup.value.password);
+
+    //Comprobamos si el formulario es válido
+    //Navegamos a /home. Navidate admite array de String(['/home'])
+    if (this.formGroup.valid){
+      this.router.navigate(['/home']);
+    }
   }
 
 }
