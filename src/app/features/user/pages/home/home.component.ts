@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
   protected characters!: Character[];
   // Definimos las columnas que se mostrarán en la tabla. 
   // Estas columnas corresponden a las propiedades de los objetos Character que queremos mostrar en la tabla.
-  protected displayedColumns: string[] = ['name', 'race', 'ki', 'affiliation'];
+  protected displayedColumns: string[] = ['name', 'race', 'ki', 'affiliation', 'image'];
 
   constructor(
     protected character: CharacterService,

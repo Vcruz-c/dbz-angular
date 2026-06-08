@@ -1,21 +1,11 @@
-<mat-table [dataSource]="characters">
-    <ng-container matColumnDef="name">
-        <mat-header-cell *matHeaderCellDef>Nombre</mat-header-cell>
-        <mat-cell *matCellDef="let character">{{ character.name }}</mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="race">
-        <mat-header-cell *matHeaderCellDef>Rasa</mat-header-cell>
-        <mat-cell *matCellDef="let character">{{ character.race }}</mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="ki">
-        <mat-header-cell *matHeaderCellDef>Ki</mat-header-cell>
-        <mat-cell *matCellDef="let character">{{ character.ki }}</mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="affiliation">
-        <mat-header-cell *matHeaderCellDef>Afiliación</mat-header-cell>
-        <mat-cell *matCellDef="let character">{{ character.affiliation }}</mat-cell>
-    </ng-container>
-
-    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-</mat-table>
+<div class="grid-container">
+  <mat-card *ngFor="let character of characters">
+    <img [src]="character.image">
+    <mat-card-content>
+        <p>{{ character.name }}</p>
+        <p>{{ character.race }}</p>
+        <p>{{ character.ki }}</p>
+        <p>{{ character.affiliation }}</p>
+    </mat-card-content>
+  </mat-card>
+</div>

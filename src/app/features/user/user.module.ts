@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UserRoutingModule } from './user-routing.module';
 import { HomeComponent } from './pages/home/home.component';
-import { MatTableModule } from '@angular/material/table';
+import { MatCardModule } from '@angular/material/card';
 
 
 
@@ -13,7 +13,7 @@ import { MatTableModule } from '@angular/material/table';
   imports: [
     CommonModule,
     UserRoutingModule,
-    MatTableModule,
+    MatCardModule,
   ]
 })
 export class UserModule { }

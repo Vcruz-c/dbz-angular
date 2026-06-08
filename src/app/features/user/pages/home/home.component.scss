@@ -1,0 +1,38 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  padding: 16px;
+  background-color: #1a1a2e;
+}
+
+mat-card {
+  background: linear-gradient(160deg, #baf38f, #e1d4ca, #ff440026);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  border-radius: 12px;
+  border: 2px solid #FF6B00;
+  color: #1a1a2e;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 
+      6px 6px 15px rgba(0, 0, 0, 0.25),
+      -3px -3px 8px rgba(255, 255, 255, 0.9);
+  }
+}
+
+mat-card{
+  img {
+    width: 20%;
+    height: 120px;
+    border-radius: 50%;
+  }
+  img:hover {
+    transform: scale(3.1);
+    transition: transform 0.5s;
+  }
+}
+
