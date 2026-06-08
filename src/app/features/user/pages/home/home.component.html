@@ -1,11 +1,12 @@
+<app-header></app-header>
 <div class="grid-container">
   <mat-card *ngFor="let character of characters">
+    <p>{{ character.name }}</p>
     <img [src]="character.image">
     <mat-card-content>
-        <p>Nombre: {{ character.name }}</p>
         <p>Raza: {{ character.race }}</p>
         <p>Ki: {{ character.ki }}</p>
-        <p> Afiliación: {{ character.affiliation }}</p>
+        <p>Afiliación: {{ character.affiliation }}</p>
     </mat-card-content>
   </mat-card>
 </div>
