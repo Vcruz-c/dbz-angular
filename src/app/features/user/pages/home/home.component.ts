@@ -8,6 +8,7 @@ import { Character } from '../../interfaces/character.interface';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  // response.items es Character[]
   protected characters!: Character[];
   // Definimos las columnas que se mostrarán en la tabla. 
   // Estas columnas corresponden a las propiedades de los objetos Character que queremos mostrar en la tabla.

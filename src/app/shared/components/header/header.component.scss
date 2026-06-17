@@ -4,7 +4,22 @@
   box-sizing: border-box;
 }
 
-mat-toolbar{
-    background-color: rgba(210, 105, 30, 0.793);
+mat-toolbar {
+  background-color: rgba(210, 105, 30, 0.793);
+  .header-nameUser {
+    margin-left: auto;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: white;
+    color:  #1565C0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  h1 {
+    color:  #1565C0;
+  }
 }
-
