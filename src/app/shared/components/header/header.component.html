@@ -1,4 +1,29 @@
 <mat-toolbar>
-    <h1>DBZ Fandom</h1>
-    <div class="header-nameUser">{{userEmail ? userEmail[0].toUpperCase() : 'profile'}}</div>
+  <h1>DBZ Fandom</h1>
+  
+  <div class="header-nameUser" (click)="toggleMenu()">
+    {{userEmail ? userEmail[0].toUpperCase() : 'P'}}
+  </div>
+
+  <div class="user-panel" *ngIf="isMenuOpen">
+    <div class="back-panel-avatar">
+        <div class="panel-avatar">{{userEmail ? userEmail[0].toUpperCase() : 'P'}}</div>
+    </div>
+    <div class="user-info">
+        <div class="ball ball-1">
+            <span class="ball-text">★</span>
+        </div>
+        <p>Usuario: </p>
+    </div>
+    <div class="user-info">
+        <div class="ball ball-2">
+            <span class="ball-text">★★</span>
+        </div>
+        <p>Correo: {{userEmail ? userEmail.toLowerCase(): ''}}</p>
+    </div>
+    <div class="back-panel-avatar-2">
+        <button mat-stroked-button color="primary">Editar perfil</button>
+        <button mat-flat-button color="warn" (click)="seccionOut()">Cerrar sesión</button>
+    </div>
+  </div>
 </mat-toolbar>

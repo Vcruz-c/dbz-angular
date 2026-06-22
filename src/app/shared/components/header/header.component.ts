@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AuthService } from '../../../features/auth/services/auth.service';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -17,8 +17,12 @@ export class HeaderComponent implements OnInit, OnDestroy {
   // usado para cancelar suscripciones activas y evitar fugas de memoria.
   private destroy$ = new Subject<void>();
 
+  // Variable de subMenú en ícono de session
+  protected isMenuOpen: boolean = false;
+
   constructor(
     private authService: AuthService,
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
@@ -38,5 +42,21 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.destroy$.next();
     this.destroy$.complete();
   }
+
+  /**
+   * Conocer si la directiva está abierta o no
+   * Directiva Menú sobre ícono de session del usuario 
+   */
+  protected toggleMenu(): void {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  protected seccionOut(): void{
+    this.authService.logout();
+    //Ocultamos el menú ya que hemos cerrado sección
+    this.isMenuOpen = false;
+    //Redireccionamos al login
+    this.router.navigate(['/login']);
+  } 
 
 }

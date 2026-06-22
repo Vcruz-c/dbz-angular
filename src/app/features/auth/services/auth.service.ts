@@ -51,4 +51,12 @@ export class AuthService {
     return this.listenerAutomatic.getValue();
   }
 
+  /**
+   * 
+   */
+  public logout(): void {
+    this.listenerAutomatic.next(null);
+    this.storageService.deleteEmail();
+  }
+
 }

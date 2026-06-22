@@ -50,4 +50,12 @@ export class StorageService {
     return this.db.get('session', 'email');
   }
 
+  /**
+   * 
+   */
+  public async deleteEmail(): Promise<void> {
+    await this.initDB();
+    await this.db.delete('session', 'email');
+  }
+
 }
