@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { StorageService } from '../../../core/services/storage.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor() {}
+  constructor(
+    private storageService: StorageService,
+  ) {}
 
   // behavior es un tipo de observable que permite emitir valores y también mantener un valor actual. 
   // En este caso, se está utilizando para almacenar el estado de autenticación del usuario.
@@ -14,6 +17,14 @@ export class AuthService {
 
   // Observable que emite el estado de autenticación del usuario.
   public readonly email$ = this.listenerAutomatic.asObservable();
+
+  /**
+   * Actualizamos el BehaviorSubject, pero no guardamos en BBDD
+   * @param email correo que pone el usuario
+   */
+  public restoreSession(email: string): void {
+  this.listenerAutomatic.next(email);
+  }
 
   /**
    * Actualiza el estado de autenticación
@@ -25,6 +36,10 @@ export class AuthService {
    */
   public updateAuthenticationState(email: string | null) : void{
     this.listenerAutomatic.next(email);
+    // Aqui guardamos el email y lo metemos en BBDD
+    if (email){
+      this.storageService.saveEmail(email);
+    }
   }
 
   /**

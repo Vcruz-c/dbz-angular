@@ -5,7 +5,7 @@ import { AuthGuard } from '../app/features/auth/guards/auth.guard';
 
 /**
  * En home ponemos canActive: [AuthGuard]
- * AuthGuard es un guard. En este archivo, en AuthGuard,definimos cuando se puede acceder a home,
+ * AuthGuard es un guard. En este archivo, en AuthGuard, definimos cuando se puede acceder a home,
  * es decir, aqui definimos el control de acceso.
  */
 const routes: Routes = [
